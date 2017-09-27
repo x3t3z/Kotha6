@@ -6,10 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.codelite.kr4k3rz.kotha6.model.ListRoom;
+import com.codelite.kr4k3rz.kotha6.model.Rooms;
+import com.codelite.kr4k3rz.kotha6.model.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import io.paperdb.Paper;
 
 public class ListRoomActivity extends AppCompatActivity {
     EditText about, location, type_of_bed, no_of_room_mates, description;
@@ -36,15 +39,21 @@ public class ListRoomActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("users/" + mAuth.getCurrentUser().getUid());
+                DatabaseReference roomsRef = database.getReference("rooms/" + mAuth.getCurrentUser().getUid());
 
 
-                ListRoom room = new ListRoom();
+                Rooms room = new Rooms();
+                Users users = Paper.book().read("user");
+                room.setFistName(users.getFirstName());
+                room.setLastName(users.getLastName());
                 room.setAbout(about.getText().toString());
                 room.setLocation(location.getText().toString());
                 room.setType_of_bed(type_of_bed.getText().toString());
                 room.setNo_of_roomMates(no_of_room_mates.getText().toString());
                 room.setDescription(description.getText().toString());
-                myRef.child("listRooms").setValue(room);
+                myRef.child("rooms").setValue(room);
+                roomsRef.setValue(room);
+
 
             }
         });

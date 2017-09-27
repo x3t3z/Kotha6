@@ -1,12 +1,13 @@
 package com.codelite.kr4k3rz.kotha6.model;
 
-/**
- * Created by kr4k3rz on 9/26/17.
- */
 
-public class User {
-    String firstName;
-    String lastName;
+
+public class Users {
+    private String firstName;
+    private String lastName;
+
+    public Users() {
+    }
 
     public String getFirstName() {
         return firstName;

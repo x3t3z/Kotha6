@@ -1,13 +1,34 @@
 package com.codelite.kr4k3rz.kotha6.model;
 
 
+public class Rooms {
+    private String fistName;
+    private String lastName;
+    private String about;
+    private String location;
+    private String type_of_bed;
+    private String no_of_roomMates;
+    private String description;
 
-public class ListRoom {
-    String about;
-    String location;
-    String type_of_bed;
-    String no_of_roomMates;
-    String description;
+    public Rooms() {
+    }
+
+    public String getFistName() {
+        return fistName;
+    }
+
+    public void setFistName(String fistName) {
+        this.fistName = fistName;
+    }
+
+    public String getLastName() {
+
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public String getAbout() {
         return about;

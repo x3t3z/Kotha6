@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/item_firstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FirstName" />
+
+    <TextView
+        android:id="@+id/item_lastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LastName" />
+
+    <TextView
+        android:id="@+id/item_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About" />
+
+    <TextView
+        android:id="@+id/item_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="location" />
+
+    <TextView
+        android:id="@+id/item_typeofBed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="type of bed" />
+
+    <TextView
+        android:id="@+id/item_noOfRoomMates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No. of Room mates" />
+
+    <TextView
+        android:id="@+id/item_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description" />
+</LinearLayout>

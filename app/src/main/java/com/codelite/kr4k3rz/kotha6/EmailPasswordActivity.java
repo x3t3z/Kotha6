@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.codelite.kr4k3rz.kotha6.model.User;
+import com.codelite.kr4k3rz.kotha6.model.Users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -17,6 +17,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import io.paperdb.Paper;
 
 public class EmailPasswordActivity extends BaseActivity {
 
@@ -73,10 +75,12 @@ public class EmailPasswordActivity extends BaseActivity {
 
                                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                                         DatabaseReference myRef = database.getReference("users/" + mAuth.getCurrentUser().getUid());
-                                        User name = new User();
+                                        Users name = new Users();
                                         name.setFirstName(mFirstName.getText().toString());
                                         name.setLastName(mLastName.getText().toString());
-                                        myRef.child("name").setValue(name);
+
+                                        myRef.setValue(name);
+                                        Paper.book().write("user", name);
                                         hideProgressDialog();
                                         startActivity(new Intent(EmailPasswordActivity.this, HomeActivity.class));
 

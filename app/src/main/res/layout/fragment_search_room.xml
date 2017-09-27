@@ -11,11 +11,18 @@
         android:gravity="center_horizontal"
         android:text="ADD ROOM" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_listRoom"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        tools:context=".ui.trending.BreakingFrag">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </FrameLayout>
 
 </LinearLayout>
