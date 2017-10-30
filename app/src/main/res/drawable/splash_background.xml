@@ -3,8 +3,8 @@
 
     <item android:drawable="@color/colorPrimary" />
     <item>
-        <bitmap
+        <color
             android:gravity="center"
-            android:src="@drawable/ic_stat_name" />
+            android:color="@color/grey_300" />
     </item>
 </layer-list>
